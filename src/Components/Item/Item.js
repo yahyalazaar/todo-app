@@ -13,14 +13,14 @@ export default function Item(props) {
         <div className="p-3 col-sm-6">
           <a
             data-bs-toggle="collapse"
-            href={"#".concat(props.id)}
+            href={"#".concat(props.id).split("-")[0]}
             role="button"
             aria-expanded="false"
-            aria-controls={props.id}
+            aria-controls={String(props.id).split("-")[0]}
           >
             {props.txt}
           </a>
-          <div className="collapse" id={props.id}>
+          <div className="collapse" id={String(props.id).split("-")[0]}>
             <div className="card card-body">
               Created at: {props.created_at} <br />
               {props.updated_at !== undefined
